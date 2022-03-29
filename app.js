@@ -12,6 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.json())
 app.use(express.static("public"));
+const port = process.env.PORT || 3001
 
 // mongoose.connect("mongodb://localhost:27017/seriesDB", { useNewUrlParser: true });
 
@@ -405,6 +406,6 @@ app.post("/update/foruser", function (req, res) {
 app.get("/", (req, res) => {
     res.send("MICROSERVICE BACKEND INTERN ASSIGNMENT")
 })
-app.listen(3001, function () {
+app.listen(port, function () {
     console.log("Server started on port 3001");
 });
